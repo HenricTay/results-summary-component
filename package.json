@@ -1,0 +1,23 @@
+{
+  "name": "results-summary-component-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Results summary component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenricTay/results-summary-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenricTay/results-summary-component/issues"
+  },
+  "homepage": "https://github.com/HenricTay/results-summary-component#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "simple-node-server": "^1.7.0"
+  }
+}

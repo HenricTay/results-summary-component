@@ -1,59 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Results summary component</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    .mainbox{ width: 1440px; display: flex; flex-direction: column;}
-    .dark{background-color:hsl(252, 100%, 67%)}
-    .light{background-color:hsl(0, 0%, 100%)}
-    .circle{background-color:hsl(256, 72%, 46%, 1); border-radius: 20px;}
-  </style>
-</head>
-<body>
-  <div class="mainbox">
-    <div class="dark">
-        <h3>Your Result</h3>
-        <div class="circle">
-          <h1>76 out of 100</h1>
-        </div>
-        <h1>Great</h1>
-        <h3>You scored higher than 65% of the people who have taken these tests.</h3>
-    </div>
-    <div class="light">
+		<title>Frontend Mentor | Results summary component</title>
 
-    </div>
-    Reaction
-  80 / 100
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			@font-face {
+				font-family: "Hanken Grotesk";
+				src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+				font-weight: 500 800;
+				font-style: normal;
+			}
+			.main {
+				width: 1440px;
+				display: flex;
+				flex-direction: row;
+				font-family: "Hanken Grotesk";
+				justify-content: center;
+			}
+			.dark {
+				width: 20%;
+				border-radius: 20px;
+				background-color: hsl(252, 100%, 67%);
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				color: white;
+			}
+			.dark p,
+			.dark h3
+      {
+				font-size: 18px;
+				color: hsl(221, 100%, 96%);
+			}
+			.header,
+			.title {
+				display: flex;
+				justify-content: center;
+			}
+			.circle {
+				background-color: hsl(256, 72%, 46%, 1);
+				border-radius: 50%;
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				align-content: space-around;
+			}
+			.circle > h1 {
+				font-size: 4rem;
+			}
+			.desc {
+				width: 80%;
+				text-align: center;
+				margin-left: 10%;
+			}
+			.light {
+				width: 20%;
+				background-color: hsl(221, 100%, 96%);
+				border-radius: 20px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				padding: 2rem;
+			}
+			.light h3{
+        font-size: 18px;
+				color:  hsl(224, 30%, 27%);
+			}
+			button {
+				background-color: hsl(224, 30%, 27%);
+				color: white;
+				border-radius: 10%;
+				height: 10%;
+				border-radius: 40px;
+				font-size: 18px;
+				font-family: "Hanken Grotesk";
+			}
+			.tasklist {
+				display: flex;
+				flex-direction: column;
+				gap: 20px 0px;
+				height: 80%;
+			}
+			.taskbox {
+				border-radius: 10px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding-right: 15px;
+			}
 
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  </div>
-
-  
-  Summary
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+			.tBoxTitle {
+				display: flex;
+				flex-direction: row;
+				margin-left: 15px;
+			}
+			.tBoxTitle > p {
+				margin-left: 10px;
+			}
+      .score {
+        display: flex;
+        flex-direction: row;
+      }
+      .score p:nth-child(odd){
+        margin-right:8px;
+      }
+      .score p:nth-child(even){
+        color:gray;
+      }
+			.red {
+				background-color: hsl(0, 100%, 67%, 0.1);
+			}
+			.yellow {
+				background-color: hsl(39, 100%, 56%, 0.1);
+			}
+			.green {
+				background-color: hsl(166, 100%, 37%, 0.1);
+			}
+			.blue {
+				background-color: hsl(234, 85%, 45%, 0.1);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="dark">
+				<div class="header"><h3>Your Result</h3></div>
+				<div class="circle">
+					<h1>76</h1>
+					<p>of 100</p>
+				</div>
+				<div class="title"><h1>Great</h1></div>
+				<div class="desc">
+					<p>
+						You scored higher than 65% of the people who have taken these tests.
+					</p>
+				</div>
+			</div>
+			<div class="light">
+				<h3>Summary</h3>
+				<div class="tasklist">
+					<div class="taskbox red">
+						<div class="tBoxTitle">
+							<img src="assets/images/icon-reaction.svg" />
+							<p style="color:hsl(0, 100%, 67%)">Reaction</pc>
+						</div>
+						<div class="score">
+							<p>80</p>
+              <p>/ 100</p>
+						</div>
+					</div>
+					<div class="taskbox yellow">
+						<div class="tBoxTitle">
+							<img src="assets/images/icon-memory.svg" />
+							<p style="color:hsl(39, 100%, 56%)">Memory</p>
+						</div>
+						<div class="score">
+							<p>92</p>
+              <p>/ 100</p>
+						</div>
+					</div>
+					<div class="taskbox green">
+						<div class="tBoxTitle">
+							<img src="assets/images/icon-verbal.svg" />
+							<p style="color:hsl(166, 100%, 37%)">Verbal</p>
+						</div>
+						<div class="score">
+							<p>61</p>
+              <p>/ 100</p>
+						</div>
+					</div>
+					<div class="taskbox blue">
+						<div class="tBoxTitle">
+							<img src="assets/images/icon-visual.svg" />
+							<p style="color:hsl(234, 85%, 45%)">Visual</p>
+						</div>
+						<div class="score">
+							<p>72</p>
+              <p>/ 100</p>
+						</div>
+					</div>
+				</div>
+				<button>Continue</button>
+			</div>
+		</div>
+	</body>
 </html>
